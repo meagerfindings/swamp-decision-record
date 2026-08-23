@@ -1,0 +1,20 @@
+{
+  "extension": "@mgreten/decision-record", "version": "2026.08.23.1", "reviewedAt": "2026-08-23T15:09:04Z",
+  "dimensions": [
+    { "id": "credentials-secrets", "verdict": "na", "note": "No credentials or external services." },
+    { "id": "logging-quality", "verdict": "issue", "note": "record has no structured entry or completion logging." },
+    { "id": "error-handling", "verdict": "pass", "note": "Validation and chronology failures precede writes; replay repairs latest pointer." },
+    { "id": "testing-completeness", "verdict": "pass", "note": "Strictness, replay repair, chronology, and reconsideration are tested." },
+    { "id": "idempotency-resilience", "verdict": "pass", "note": "Exact replay and interrupted second-write recovery are covered." },
+    { "id": "api-contracts", "verdict": "na", "note": "No external API calls." },
+    { "id": "resource-management", "verdict": "na", "note": "No external resources or handles." },
+    { "id": "published-surface-hygiene", "verdict": "pass", "note": "README uses synthetic identifiers and hashes." },
+    { "id": "schema-strictness", "verdict": "pass", "note": "Record, binding, and argument objects are strict." },
+    { "id": "lifetime-gc", "verdict": "pass", "note": "Both record specs declare infinite lifetime and GC retention." },
+    { "id": "crud-completeness", "verdict": "na", "note": "Immutable decision ledger, not external CRUD." },
+    { "id": "preflight-checks", "verdict": "na", "note": "No external mutating operation." },
+    { "id": "instance-names", "verdict": "pass", "note": "Decision and latest-proposal names are distinct and schema-compatible." },
+    { "id": "data-access", "verdict": "pass", "note": "Existing records and latest state use readResource." },
+    { "id": "version-upgrades", "verdict": "na", "note": "Initial standalone version." }
+  ]
+}
