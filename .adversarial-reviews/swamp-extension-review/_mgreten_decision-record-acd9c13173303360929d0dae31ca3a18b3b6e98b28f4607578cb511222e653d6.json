@@ -1,0 +1,82 @@
+{
+  "extension": "@mgreten/decision-record",
+  "version": "2026.08.23.1",
+  "reviewedAt": "2026-08-23T17:28:00Z",
+  "dimensions": [
+    {
+      "id": "credentials-secrets",
+      "verdict": "na",
+      "note": "No credentials, secrets, or external services are used."
+    },
+    {
+      "id": "logging-quality",
+      "verdict": "pass",
+      "note": "The record method logs structured, non-sensitive entry and completion events for create, replay, and repair outcomes."
+    },
+    {
+      "id": "error-handling",
+      "verdict": "pass",
+      "note": "Validation, replay conflict, chronology, and reconsideration failures occur before their corresponding writes and return actionable errors."
+    },
+    {
+      "id": "testing-completeness",
+      "verdict": "pass",
+      "note": "Synthetic tests cover strict schemas, authority rejection, replay conflict, interrupted-write repair, chronology, reconsideration, and structured logging."
+    },
+    {
+      "id": "idempotency-resilience",
+      "verdict": "pass",
+      "note": "Exact replay is a no-op when complete and repairs only the missing latest-decision projection after an interrupted second write."
+    },
+    {
+      "id": "api-contracts",
+      "verdict": "na",
+      "note": "The model makes no external API calls."
+    },
+    {
+      "id": "resource-management",
+      "verdict": "na",
+      "note": "The model opens no external connections, streams, files, or process handles."
+    },
+    {
+      "id": "published-surface-hygiene",
+      "verdict": "pass",
+      "note": "README examples and tests use generic synthetic identifiers and hashes without host or infrastructure details."
+    },
+    {
+      "id": "schema-strictness",
+      "verdict": "pass",
+      "note": "The public argument, record, dossier, actor, authority, and evidence objects are strict."
+    },
+    {
+      "id": "lifetime-gc",
+      "verdict": "pass",
+      "note": "Both immutable decision and latest-decision resources explicitly declare infinite lifetime and bounded retained versions."
+    },
+    {
+      "id": "crud-completeness",
+      "verdict": "na",
+      "note": "This is an immutable decision ledger rather than an external CRUD lifecycle model."
+    },
+    {
+      "id": "preflight-checks",
+      "verdict": "na",
+      "note": "The only effect is validated local record persistence; there is no external mutating operation requiring live or policy preflight."
+    },
+    {
+      "id": "instance-names",
+      "verdict": "pass",
+      "note": "Decision and proposal-latest names are deterministic, distinct, and always written against schemas with the same validated record shape."
+    },
+    {
+      "id": "data-access",
+      "verdict": "pass",
+      "note": "Existing decisions and proposal history are read exclusively through readResource."
+    },
+    {
+      "id": "version-upgrades",
+      "verdict": "na",
+      "note": "This is the initial standalone package version and does not migrate an earlier published package version."
+    }
+  ]
+}
